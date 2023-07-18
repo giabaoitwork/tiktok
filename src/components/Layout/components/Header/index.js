@@ -26,6 +26,8 @@ import images from '~/assets/images';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
+import { InboxIcon, MessageIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -134,14 +136,14 @@ function Header() {
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
-                            <Tippy interactive content="Upload video" placement="bottom">
-                                <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon className={cx('icon')} icon={faCloudUpload} />
-                                </button>
-                            </Tippy>
                             <Tippy interactive content="Message" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon className={cx('icon')} icon={faMessage} />
+                                    <MessageIcon classname={cx('icon')} />
+                                </button>
+                            </Tippy>
+                            <Tippy interactive content="Inbox" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <InboxIcon className={cx('icon')} />
                                 </button>
                             </Tippy>
                         </>
@@ -157,10 +159,11 @@ function Header() {
                         currentUser={currentUser}
                     >
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('avatar')}
                                 src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/3b9fbb4b8ea51f19104aae28cbda5984~c5_100x100.jpeg?x-expires=1689757200&x-signature=sTKwtHQpmW60jsH%2FdwPZ53ZLl%2FI%3D"
                                 alt="Nguyen Van A"
+                                fallback="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/b9ada7f9233548cba5f6bfba83b53bf2~c5_100x100.jpeg?x-expires=1689840000&x-signature=xX6XBYIVpJvltN%2BdI6oIw3OdPxk%3D"
                             />
                         ) : (
                             <button className={cx('more-btn')}>
