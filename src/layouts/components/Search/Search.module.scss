@@ -19,6 +19,7 @@
     input {
         flex: 1;
         height: 100%;
+        padding-right: 40px;
         font-size: 1.6rem;
         background-color: transparent;
         font-family: var(--font-family);
@@ -62,6 +63,7 @@
 
 .clear,
 .loading {
+    display: flex;
     position: absolute;
     right: 52px;
     top: 50%;
